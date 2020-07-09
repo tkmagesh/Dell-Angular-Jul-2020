@@ -21,20 +21,20 @@
     <div id="divMessage">[Greet Message]</div>
     <script>
         function greetUser() {
-            var tb = document.getElementById('txtUserName');
-            var userName = tb.value;
-            var dMsg = document.getElementById('divMessage');
+            var userName = $('#txtUserName').val();
             if (userName === ''){
-                dMsg.innerText = 'Invalid input';
-                dMsg.classList.add('error');
+                $('#divMessage')
+                    .text('Invalid input')
+                    .addClass('error');
+                
             } else {
                 var msg = 'Hi ' + userName + ', Have a nice day!';            
-                dMsg.innerText = msg;
-                dMsg.classList.remove('error');
+                $('#divMessage')
+                    .text(msg)
+                    .removeClass('error');
             }
         }
-        var btnGreet = document.getElementById('btnGreet');
-        btnGreet.addEventListener('click', greetUser)
+        $('#btnGreet').click(greetUser);
     </script>
 </body>
 </html>
