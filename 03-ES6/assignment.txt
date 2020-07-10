@@ -6,7 +6,7 @@ var products = [
     {id : 5, name : 'Zen', cost : 50, units : 30, category : 'grocery'}
 ]
 
-1. Sort the products by cost (using the sort method & arrow functions)
+1. Sort the products by cost (using the sort 09kmethod & arrow functions)
 products.sort((p1, p2) => p1.cost - p2.cost);
 
 2. filter the stationary products (using the filter method & arrow functions)
