@@ -1,0 +1,18 @@
+var products = [
+    {id : 7, name : 'Pen', cost : 40, units : 30, category : 'stationary'},
+    {id : 2, name : 'Ten', cost : 70, units : 20, category : 'grocery'},
+    {id : 9, name : 'Den', cost : 20, units : 40, category : 'stationary'},
+    {id : 4, name : 'Len', cost : 60, units : 50, category : 'stationary'},
+    {id : 5, name : 'Zen', cost : 50, units : 30, category : 'grocery'}
+]
+
+1. Sort the products by cost (using the sort method & arrow functions)
+
+2. filter the stationary products (using the filter method & arrow functions)
+
+3. find the max cost from the products (using the reduce method & arrow functions)
+
+4. create a new product list with all the attributes of the products and cost = 90% of cost (using the map method & arrow functions)
+
+5. display the name and cost of all the products (using the forEach method & arrow functions)
+

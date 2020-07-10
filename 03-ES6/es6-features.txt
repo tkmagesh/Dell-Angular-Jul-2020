@@ -1,0 +1,164 @@
+ES5
+DataTypes - number, string, boolean, object, function, undefined
+Constructs - var, if else, switch, while, for, try catch finally, function
+APIs - Date, Array, Math, setTimeout, clearTimeout, setInterval, clearInterval, RegEx, Error
+
+ES6 (ESNext, ES2015)
+===
+1. let
+2. const
+3. array destructuring
+4. rest operator (array)
+5. spread operator (array)
+6. object destructuring
+7. rest operator (object)
+8. spread operator (object)
+9. default arguments
+10. arrow functions
+11. template strings
+12. Classes
+13. iterators
+14. generators
+
+
+/*
+//function statement
+function add(x,y){
+    return x + y;
+}
+
+//function expression
+var add = function(x,y){
+    return x + y;
+}
+
+var add = (x,y) => {
+    return x + y;
+}
+*/
+var add = (x,y) => x + y;
+
+
+typeof add
+"function"
+add(100,200)
+300
+var x = 100, y = 200
+
+var s = 'value of x is ' + x + ' and value of y is ' + y
+
+s
+
+"value of x is 100 and value of y is 200"
+var s1 = `value of x is ${x} and value of y is ${y}`
+
+s1
+"value of x is 100 and value of y is 200"
+var s1 = `value of x is ${x} 
+and value of y is ${y}`
+
+s1
+"value of x is 100 
+and value of y is 200"
+class Employee{
+    id = 0;
+    name = '';
+    salary = 0;
+
+    constructor(id, name, salary){
+        this.id = id;
+        this.name = name;
+        this.salary = salary;
+    }
+
+    display(){
+        console.log(`id=${this.id}, name=${this.name} and salary=${this.salary}`);
+    }
+}
+
+var emp = new Employee(100, 'Magesh', 10000)
+
+emp
+Employee {id: 100, name: "Magesh", salary: 10000}
+emp.display()
+VM2274:13 id=100, name=Magesh and salary=10000
+
+typeof Employee
+"function"
+class FulltimeEmployee extends Employee{
+    benefits = '';
+
+    constructor(id, name, salary, benefits){
+        super(id, name, salary);
+        this.benefits= benefits;
+    }
+}
+
+var fte = new FulltimeEmployee(200, 'Suresh', 20000, 'Healthcare')
+
+fte
+FulltimeEmployee {id: 200, name: "Suresh", salary: 20000, benefits: "Healthcare"}
+fte.display()
+VM2274:13 id=200, name=Suresh and salary=20000
+
+var nos = [3,1,4,2,5]
+
+for(var no of nos)
+    console.log(no)
+VM3024:2 3
+VM3024:2 1
+VM3024:2 4
+VM3024:2 2
+VM3024:2 5
+
+function *getEvenNos(){
+    yield 2;
+    yield 4;
+    yield 6; 
+    yield 8;
+    return 10;
+}
+
+var evenNoGen = getEvenNos()
+
+evenNoGen.next()
+{value: 2, done: false}
+evenNoGen.next()
+{value: 4, done: false}
+evenNoGen.next()
+{value: 6, done: false}
+evenNoGen.next()
+
+{value: 8, done: false}
+evenNoGen.next()
+
+{value: 10, done: true}
+evenNoGen.next()
+
+{value: undefined, done: true}
+evenNoGen.next()
+
+{value: undefined, done: true}
+function getRandomNos(){
+    while(true){
+        yield Math.random();
+    }
+}
+VM3463:3 Uncaught SyntaxError: Unexpected identifier
+function *getRandomNos(){
+    while(true){
+        yield Math.random();
+    }
+}
+var randGen = getRandomNos()
+randGen.next()
+{value: 0.8722307014391757, done: false}
+randGen.next()
+{value: 0.4663247976610667, done: false}
+randGen.next()
+{value: 0.7674512175662465, done: false}
+randGen.next()
+{value: 0.3087390643185959, done: false}
+randGen.next()
+{value: 0.28528544421369184, done: false}
+// http://es6-features.org
