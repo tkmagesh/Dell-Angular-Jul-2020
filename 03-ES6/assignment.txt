@@ -7,12 +7,17 @@ var products = [
 ]
 
 1. Sort the products by cost (using the sort method & arrow functions)
+products.sort((p1, p2) => p1.cost - p2.cost);
 
 2. filter the stationary products (using the filter method & arrow functions)
+var stationaryProducts = products.filter(p => p.category == 'stationary')
 
 3. find the max cost from the products (using the reduce method & arrow functions)
+var maxCost = products.reduce((result,p) => p.cost>result ? p.cost : result);
 
 4. create a new product list with all the attributes of the products and cost = 90% of cost (using the map method & arrow functions)
+var discountedProducts = products.map(p => ({...p, cost : p.cost * 0.9}));
 
 5. display the name and cost of all the products (using the forEach method & arrow functions)
+products.forEach(p => console.log(p.name, p.cost))
 
