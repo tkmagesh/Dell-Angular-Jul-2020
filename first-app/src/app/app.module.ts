@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { GreeterComponent } from './greeter/greeter.component';
 import { CalculatorComponent } from './calculator/calculator.component';
-
+import { Calculator2Component } from "./calculator/calculator2.component";
 /* 
   declarations - all UI entities (components, pipes, directives) 
   providers - services 
@@ -15,7 +15,9 @@ import { CalculatorComponent } from './calculator/calculator.component';
   declarations: [
     AppComponent,
     GreeterComponent,
-    CalculatorComponent
+    CalculatorComponent,
+    Calculator2Component
+
   ],
   imports: [
     BrowserModule
