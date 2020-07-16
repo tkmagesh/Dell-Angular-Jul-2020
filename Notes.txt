@@ -142,3 +142,8 @@ Directives
     Structural Directive
         Change the structure of the dom tree by adding or removing dom nodes
         Used with '*'
+
+falsy values in javascript
+    0, '', null, NaN, undefined, false
+truthy values in javascript
+    everything other than the falsy values

@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { GreeterComponent } from './greeter/greeter.component';
 import { CalculatorComponent } from './calculator/calculator.component';
 import { Calculator2Component } from "./calculator/calculator2.component";
+import { CalculatorModel } from "./calculator/CalculatorModel";
 /* 
   declarations - all UI entities (components, pipes, directives) 
   providers - services 
@@ -22,7 +23,9 @@ import { Calculator2Component } from "./calculator/calculator2.component";
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [
+    CalculatorModel
+  ],
   bootstrap: [
     AppComponent
   ]
