@@ -133,4 +133,12 @@ ES6 Modules
     Explicitly import what is required from the other module
     
 
+Directives
+    Attribute Directive
+        Used to change the attributes of an existing DOM Node
+        DO NOT change the structure of the dom tree (by adding / removing dom nodes)
+        used with '[]'
 
+    Structural Directive
+        Change the structure of the dom tree by adding or removing dom nodes
+        Used with '*'
