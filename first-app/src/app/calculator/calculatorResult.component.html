@@ -1,0 +1,6 @@
+<div *ngIf="data !== 0; else noResult" [ngClass]="{positive : data >= 0, negative : data < 0}">
+    {{data | currency:'INR'}}
+</div>
+<ng-template #noResult>
+    <div>[No Result]</div>
+</ng-template>

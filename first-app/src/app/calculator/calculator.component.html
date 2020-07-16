@@ -7,10 +7,4 @@
 <input type="button" value="Subtract" (click)="model.subtract()">
 <input type="button" value="Multiply" (click)="model.multiply()">
 <input type="button" value="Divide" (click)="model.divide()">
-<div *ngIf="model.result !== 0; else noResult" 
-    [ngClass]="{positive : model.result >= 0, negative : model.result < 0}">
-    {{model.result | currency:'INR'}}
-</div>
-<ng-template #noResult>
-    <div>[No Result]</div>
-<ng-template>
+<app-calculator-result [data]="model.result"></app-calculator-result>
