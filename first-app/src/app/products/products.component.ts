@@ -7,4 +7,12 @@ import { Component } from "@angular/core";
 })
 export class ProductsComponent{
     productNames : string[] = ['Pen', 'Pencil', 'Marker', 'Scribble Pad'];
+
+    onAddNewClick(newProductName : string){
+        this.productNames.push(newProductName);
+    }
+
+    onRemoveClick(productName){
+        this.productNames = this.productNames.filter(pn => pn !== productName);
+    }
 }
