@@ -9,7 +9,7 @@
 <input type="button" value="Divide" (click)="model.divide()">
 <div *ngIf="model.result !== 0; else noResult" 
     [ngClass]="{positive : model.result >= 0, negative : model.result < 0}">
-    {{model.result}}
+    {{model.result | currency:'INR'}}
 </div>
 <ng-template #noResult>
     <div>[No Result]</div>
