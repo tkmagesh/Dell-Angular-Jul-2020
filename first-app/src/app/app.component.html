@@ -4,6 +4,8 @@
 <input type="button" value="Greeter" (click) = "choice='greeter'">
 <input type="button" value="Calculator" (click) = "choice='calculator'">
 <input type="button" value="Calculator-2" (click) = "choice='calculator-2'">
+<input type="button" value="Products"  (click)="choice='products'">
 <app-calculator *ngIf="choice === 'calculator'"></app-calculator>
 <app-calculator-2 *ngIf="choice === 'calculator-2'"></app-calculator-2>
 <app-greeter *ngIf="choice === 'greeter'"></app-greeter>
+<app-products *ngIf="choice === 'products'"></app-products>

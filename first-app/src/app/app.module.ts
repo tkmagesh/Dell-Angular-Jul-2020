@@ -7,6 +7,8 @@ import { CalculatorComponent } from './calculator/calculator.component';
 import { Calculator2Component } from "./calculator/calculator2.component";
 import { CalculatorModel } from "./calculator/CalculatorModel";
 import { CalculatorResultComponent } from "./calculator/calculatorResult.component";
+import { ProductsComponent } from "./products/products.component";
+
 /* 
   declarations - all UI entities (components, pipes, directives) 
   providers - services 
@@ -19,7 +21,8 @@ import { CalculatorResultComponent } from "./calculator/calculatorResult.compone
     GreeterComponent,
     CalculatorComponent,
     Calculator2Component,
-    CalculatorResultComponent
+    CalculatorResultComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule
