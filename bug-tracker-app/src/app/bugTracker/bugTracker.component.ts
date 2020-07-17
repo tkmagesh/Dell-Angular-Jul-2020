@@ -19,10 +19,10 @@ export class BugTrackerComponent implements OnInit, OnDestroy{
     }
 
     ngOnInit(){
-        this.bugs.push({ id : 1, name : 'Server communication failure', isClosed : false, createdAt : new Date('10-Mar-2013')});
+        /* this.bugs.push({ id : 1, name : 'Server communication failure', isClosed : false, createdAt : new Date('10-Mar-2013')});
         this.bugs.push({ id: 3, name: 'User actions not recognized', isClosed: true, createdAt: new Date('10-Mar-2014') });
         this.bugs.push({ id: 5, name: 'Application not responding', isClosed: true, createdAt: new Date('10-Mar-2017') });
-        this.bugs.push({ id: 2, name: 'Data integrity checks failed', isClosed: false, createdAt: new Date('10-Mar-2015') });
+        this.bugs.push({ id: 2, name: 'Data integrity checks failed', isClosed: false, createdAt: new Date('10-Mar-2015') }); */
     }
 
     ngOnDestroy(){
