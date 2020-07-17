@@ -12,7 +12,7 @@ export class BugTrackerComponent implements OnInit, OnDestroy{
     sortAttr : string = '';
     sortDesc : boolean = false;
 
-    newBugName : string = '';
+    
     
     constructor(private bugOperations : BugOperationsService){
         
@@ -29,11 +29,7 @@ export class BugTrackerComponent implements OnInit, OnDestroy{
 
     }
     
-    onAddNewClick(){
-        const newBug = this.bugOperations.createNew(this.newBugName);
-        //mutating
-        //this.bugs.push(newBug);
-
+    onNewBugCreated(newBug : Bug){
         this.bugs = [...this.bugs, newBug];
     }
 
