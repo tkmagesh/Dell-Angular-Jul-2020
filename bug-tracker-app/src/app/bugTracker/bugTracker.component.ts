@@ -8,6 +8,9 @@ import { BugOperationsService } from "./services/bugOperations.service";
 })
 export class BugTrackerComponent implements OnInit, OnDestroy{
     bugs : Bug[] = [];
+
+    sortAttr : string = '';
+    sortDesc : boolean = false;
     
     constructor(private bugOperations : BugOperationsService){
         
