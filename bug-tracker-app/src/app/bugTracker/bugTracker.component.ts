@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit, OnDestroy } from "@angular/core";
 import { Bug } from "./models/Bug";
 import { BugOperationsService } from "./services/bugOperations.service";
 
@@ -6,11 +6,22 @@ import { BugOperationsService } from "./services/bugOperations.service";
     selector : 'app-bug-tracker',
     templateUrl : './bugTracker.component.html'
 })
-export class BugTrackerComponent{
+export class BugTrackerComponent implements OnInit, OnDestroy{
     bugs : Bug[] = [];
     
     constructor(private bugOperations : BugOperationsService){
         
+    }
+
+    ngOnInit(){
+        this.bugs.push({ id : 1, name : 'Server communication failure', isClosed : false, createdAt : new Date('10-Mar-2013')});
+        this.bugs.push({ id: 3, name: 'User actions not recognized', isClosed: true, createdAt: new Date('10-Mar-2014') });
+        this.bugs.push({ id: 5, name: 'Application not responding', isClosed: true, createdAt: new Date('10-Mar-2017') });
+        this.bugs.push({ id: 2, name: 'Data integrity checks failed', isClosed: false, createdAt: new Date('10-Mar-2015') });
+    }
+
+    ngOnDestroy(){
+
     }
     
     onAddNewClick(newBugName : string){
