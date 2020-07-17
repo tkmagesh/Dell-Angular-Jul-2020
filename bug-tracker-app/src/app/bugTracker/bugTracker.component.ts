@@ -11,6 +11,8 @@ export class BugTrackerComponent implements OnInit, OnDestroy{
 
     sortAttr : string = '';
     sortDesc : boolean = false;
+
+    newBugName : string = '';
     
     constructor(private bugOperations : BugOperationsService){
         
@@ -27,17 +29,21 @@ export class BugTrackerComponent implements OnInit, OnDestroy{
 
     }
     
-    onAddNewClick(newBugName : string){
-        const newBug = this.bugOperations.createNew(newBugName);
-        this.bugs.push(newBug);
+    onAddNewClick(){
+        const newBug = this.bugOperations.createNew(this.newBugName);
+        //mutating
+        //this.bugs.push(newBug);
+
+        this.bugs = [...this.bugs, newBug];
     }
 
     onRemoveClick(bugToRemove : Bug){
         this.bugs = this.bugs.filter(bug => bug.id !== bugToRemove.id);
     }
 
-    onBugNameClick(bug : Bug){
-        this.bugOperations.toggle(bug);
+    onBugNameClick(bugToToggle : Bug){
+        const toggledBug = this.bugOperations.toggle(bugToToggle);
+        this.bugs = this.bugs.map(bug => bug.id === bugToToggle.id ? toggledBug : bug);
     }
 
     onRemoveClosedClick(){
