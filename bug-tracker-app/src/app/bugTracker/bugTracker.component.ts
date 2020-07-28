@@ -19,10 +19,11 @@ export class BugTrackerComponent implements OnInit, OnDestroy{
     }
 
     ngOnInit(){
-        /* this.bugs.push({ id : 1, name : 'Server communication failure', isClosed : false, createdAt : new Date('10-Mar-2013')});
-        this.bugs.push({ id: 3, name: 'User actions not recognized', isClosed: true, createdAt: new Date('10-Mar-2014') });
-        this.bugs.push({ id: 5, name: 'Application not responding', isClosed: true, createdAt: new Date('10-Mar-2017') });
-        this.bugs.push({ id: 2, name: 'Data integrity checks failed', isClosed: false, createdAt: new Date('10-Mar-2015') }); */
+       this.loadBugs();
+    }
+
+    private loadBugs(){
+        this.bugs = this.bugOperations.getAll();
     }
 
     ngOnDestroy(){
@@ -34,6 +35,7 @@ export class BugTrackerComponent implements OnInit, OnDestroy{
     }
 
     onRemoveClick(bugToRemove : Bug){
+        this.bugOperations.remove(bugToRemove);
         this.bugs = this.bugs.filter(bug => bug.id !== bugToRemove.id);
     }
 
@@ -43,7 +45,10 @@ export class BugTrackerComponent implements OnInit, OnDestroy{
     }
 
     onRemoveClosedClick(){
-        this.bugs = this.bugs.filter(bug => !bug.isClosed)
+        this.bugs
+            .filter(bug => bug.isClosed)
+            .forEach(closedBug => this.bugOperations.remove(closedBug));
+        this.loadBugs();
     }
 
 }
