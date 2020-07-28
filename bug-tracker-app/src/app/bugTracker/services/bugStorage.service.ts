@@ -1,7 +1,10 @@
 import { Bug } from "../models/Bug";
 
 export class BugStorageService{
+
+    //local resource, so we are able to use it synchronously
     private storage = window.localStorage;
+    
     private prevBugId: number = 0;
     private keyPrefix = 'bug - ';
 

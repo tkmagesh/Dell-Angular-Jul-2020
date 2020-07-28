@@ -147,3 +147,94 @@ falsy values in javascript
     0, '', null, NaN, undefined, false
 truthy values in javascript
     everything other than the falsy values
+
+
+Asynchronous Programming
+    1. callback
+    2. events
+    3. promises
+    4. async await
+    5. generators
+    6. observables ()
+
+
+Observable X Enumerable 
+    Enumerable = iterable with lazy evaluation (generator)
+
+    Iterable?    
+
+products (5000)
+    id, name, cost, units, category
+
+Find out the first 10 stationary products whose "value" is less than 100
+    where "value" = cost * units
+
+function filterStationaryProducts(products){
+    .....
+    return stationaryProducts;
+}
+
+function transformWithValue(products){
+    .....
+    return productsWithValue;
+}
+
+products
+    .filter(p => p.category === 'stationary')
+    .map(p => ({...p, value: p.cost * p.units}))
+    .filter(pv => pv.value < 100)
+    .first(10)
+
+    30 J2EE Engineers from Bangalore
+        with min of 5 years of experience.
+
+    
+3000 total 
+    300 to be interviewed
+
+
+Enumerable -> is a collection that already has the data
+    filter
+    map
+    reduce
+    forEach
+
+Observable -> is a collection that will get the data in future across the time line one after Another
+           -> Event Streams
+
+    filter
+    map
+    scan
+    forEach
+
+Rx.NET ( Reactive Extensions ) (rxjs)
+
+Mouse is a database
+
+x,y,height, width, border size, border color, fill color, fill pattern
+
+Event Driven Applications
+
+
+Employee.csv
+    id,name,email,doj,salary,address
+
+Average Salary
+
+open file
+let count, sum
+while (!eof){
+    let line = file.readLine()
+    let cols = line.parse()
+    ++count;
+    sum += cols['salary']
+}
+avg = sum /count;
+close file
+
+
+Browser
+    User Actions (P)
+    XHR
+    Server Sent Events (P)
+    Web Sockets (P)
