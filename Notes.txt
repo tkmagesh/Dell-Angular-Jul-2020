@@ -238,3 +238,29 @@ Browser
     XHR
     Server Sent Events (P)
     Web Sockets (P)
+
+
+Build steps for JS Applications
+compile ts -> js
+minify js
+uglify js
+bundle js
+version js
+
+compile scss -> css 
+minify css
+bundle css
+version css
+
+update the references of generated js and css files in the html page
+minify html
+
+create build folder
+copy all the resources that need to be deployed
+
+
+
+
+For production build
+    ng build --prod
+
